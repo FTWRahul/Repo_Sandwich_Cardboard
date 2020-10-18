@@ -8,10 +8,6 @@ namespace Interfaces
         void OnEnter();
         void OnExit();
         void OnClick();
-
-        //TODO: Figure out if I need to expose these at all!
-        UnityEvent OnEnterEvent { get;}
-        UnityEvent OnExitEvent { get;}
-        UnityEvent OnClickEvent { get;}
+        
     }
 }

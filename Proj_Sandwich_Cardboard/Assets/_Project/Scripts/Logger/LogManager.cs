@@ -15,26 +15,6 @@ namespace Logger
         [SerializeField] private AnimationCurve animationCurve;
         [SerializeField] private TextMeshProUGUI displayText;
 
-        private static LogManager _instance;
-        
-        public static LogManager Instance
-        {
-            get => _instance;
-            set => _instance = value;
-        }
-        
-        private void Awake()
-        {
-            if (_instance == null)
-            {
-                _instance = this;
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-        }
-
         private void Start()
         {
             Log("Open some Drawers \n and make some sandwiches!");

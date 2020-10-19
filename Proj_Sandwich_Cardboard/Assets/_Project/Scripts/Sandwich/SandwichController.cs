@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Audio;
-using Intractable;
 using Logger;
 using ScriptableObjects;
 using UnityEngine;
@@ -14,6 +13,7 @@ namespace Sandwich
     {
         //private members
         private AudioManager _audioManager;
+        private LogManager _logManager;
         //a stack best represents our use case!
         private Stack<IngredientSlice> _stackedIngredients = new Stack<IngredientSlice>();
         private int _meshIndex = 1;
@@ -32,6 +32,7 @@ namespace Sandwich
         private void Awake()
         {
             _audioManager = FindObjectOfType<AudioManager>();
+            _logManager = FindObjectOfType<LogManager>();
         }
 
         private void Start()
@@ -45,7 +46,7 @@ namespace Sandwich
         {
             if (HasWon)
             {
-                LogManager.Instance.Log("Finish what you started! :D");
+                _logManager.Log("Finish what you started! :D");
                 return true; // returns true to trigger the object to go back.
             }
             // Distance check to see if slice can be stacked
@@ -57,7 +58,7 @@ namespace Sandwich
                 _audioManager.PlayPopSound();
                 return true;
             }
-            LogManager.Instance.Log("Error : Sandwich Overflow \n Remove the top slice and seal the deal \n with another piece of bread!");
+            _logManager.Log("Error : Sandwich Overflow \n Remove the top slice and seal the deal \n with another piece of bread!");
             return false;
         }
 
@@ -108,7 +109,7 @@ namespace Sandwich
                 _meshIndex = 1;
                 _stackedIngredients.Clear();
                 SpawnStackSlice(startingBread);
-                LogManager.Instance.Log("Hungry for more?");
+                _logManager.Log("Hungry for more?");
             }
             else
             {
@@ -116,7 +117,7 @@ namespace Sandwich
                 {
                     slice.UpdateMesh(_meshIndex);
                 }
-                LogManager.Instance.Log("Nom!");
+                _logManager.Log("Nom!");
                 _meshIndex++;
             }
             

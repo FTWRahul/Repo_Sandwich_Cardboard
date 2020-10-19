@@ -1,5 +1,4 @@
-﻿using System;
-using ScriptableObjects;
+﻿using ScriptableObjects;
 using UnityEngine;
 
 namespace Sandwich
@@ -8,7 +7,7 @@ namespace Sandwich
     //Dynamically create ingredients based on passed Data.
     public class IngredientSlice : MonoBehaviour
     {
-        //private memebers
+        //private members
         private MeshFilter _meshFilter;
         private MeshRenderer _meshRenderer;
         private IngredientSo _ingredientSo;

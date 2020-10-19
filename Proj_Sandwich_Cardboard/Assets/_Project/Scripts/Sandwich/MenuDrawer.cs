@@ -8,8 +8,11 @@ namespace Sandwich
     {
         private const string INGREDIENT_PATH = "Sandwich/IngredientSOs";
         
+        
         [SerializeField] private GameObject ingredientPrefab;
         [SerializeField] private Transform parentTransform;
+        [Tooltip("Don't forget to prepend with a / !!")]
+        [SerializeField] private string specificFolderName;
         
         [Tooltip("In the drawer how many rows exist?")]
         [SerializeField] private int width;
@@ -24,7 +27,7 @@ namespace Sandwich
 
         private void Initialize()
         {
-            var temp = Resources.LoadAll<IngredientSo>(INGREDIENT_PATH);
+            var temp = Resources.LoadAll<IngredientSo>(INGREDIENT_PATH + specificFolderName);
             int height = 0;
             for (int i = 0; i < temp.Length; i++)
             {

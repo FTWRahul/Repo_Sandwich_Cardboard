@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Intractable;
+using Logger;
 using ScriptableObjects;
 using UnityEngine;
 
@@ -28,7 +29,7 @@ namespace Sandwich
         {
             if (HasWon)
             {
-                //TODO: Log to eat the sandwich!
+                LogManager.Instance.Log("Enjoy your meal :D");
                 return true;
             }
             if (Vector3.Distance(transform.position, position) > stackDistanceThreshold) return false;
@@ -38,7 +39,7 @@ namespace Sandwich
                 SpawnStackSlice(data);
                 return true;
             }
-            //TODO: In game log, too many ingredients!!
+            LogManager.Instance.Log("That's too big of a sandwich \n Remove a slice and seal the deal with another bread slice!");
             return false;
         }
 
@@ -76,14 +77,18 @@ namespace Sandwich
                 {
                     Destroy(slice.gameObject);
                 }
-                _meshIndex = 0;
+                _meshIndex = 1;
                 _stackedIngredients.Clear();
                 SpawnStackSlice(startingBread);
+                LogManager.Instance.Log("Hungry for more?");
+                return;
             }
             foreach (var slice in _stackedIngredients)
             {
                 slice.GetComponent<IngredientSlice>().UpdateMesh(_meshIndex);
             }
+            LogManager.Instance.Log("Nom!");
+
             _meshIndex++;
         }
 

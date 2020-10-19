@@ -1,4 +1,5 @@
-﻿using ScriptableObjects;
+﻿using System;
+using ScriptableObjects;
 using UnityEngine;
 
 namespace Sandwich
@@ -13,6 +14,8 @@ namespace Sandwich
         [Tooltip("In the drawer how many rows exist?")]
         [SerializeField] private int width;
         [SerializeField] private float horizontalPadding, verticalPadding;
+        
+        public event Action OnInitialized;
 
         private void Awake()
         {
@@ -34,6 +37,7 @@ namespace Sandwich
                     height++;
                 }
             }
+            OnInitialized?.Invoke();
         }
     }
 }

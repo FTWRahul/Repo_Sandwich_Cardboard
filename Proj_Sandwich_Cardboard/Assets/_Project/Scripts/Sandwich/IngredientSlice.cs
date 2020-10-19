@@ -9,6 +9,7 @@ namespace Sandwich
     public class IngredientSlice : MonoBehaviour
     {
         //[SerializeField] private IngredientSo testSo; 
+        [SerializeField] private GameObject displayGameObject; 
         private MeshFilter _meshFilter;
         private MeshRenderer _meshRenderer;
         private IngredientSo _ingredientSo;
@@ -27,8 +28,8 @@ namespace Sandwich
 
         private void Awake()
         {
-            _meshRenderer = GetComponent<MeshRenderer>();
-            _meshFilter = GetComponent<MeshFilter>();
+            _meshRenderer = displayGameObject.GetComponent<MeshRenderer>();
+            _meshFilter = displayGameObject.GetComponent<MeshFilter>();
         }
 
         public void Initialize(IngredientSo data)

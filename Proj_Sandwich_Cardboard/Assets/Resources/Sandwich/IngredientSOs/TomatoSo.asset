@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebae5e40a3b94947bb7b569df91516a7, type: 3}
+  m_Name: TomatoSo
+  m_EditorClassIdentifier: 
+  ingredientName: Tomato
+  ingredientMesh: {fileID: 2337535511279580658, guid: c11d344d03e810449b4f3f8c4b4a7add,
+    type: 3}
+  ingredientMaterial: {fileID: 2100000, guid: 77cf465006b1de4409c38a031564db88, type: 2}

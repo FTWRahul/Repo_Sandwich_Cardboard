@@ -3,11 +3,20 @@
 namespace Interfaces
 {
     //Allows scripts to have common functionality while interacting, also limits interactions to the ones specified.
-    public interface IIntractable
+    public interface ISelectionResponse
     {
         void OnEnter();
         void OnExit();
-        void OnClick();
-        
+    }
+
+    public interface IClickResponse
+    {
+        void OnDown();
+        void OnUp();
+    }
+
+    public interface IHoldResponse
+    {
+        void OnHold();
     }
 }

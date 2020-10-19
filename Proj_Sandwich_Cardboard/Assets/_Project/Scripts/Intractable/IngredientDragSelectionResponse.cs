@@ -1,6 +1,7 @@
 ﻿using System;
 using Interfaces;
 using Sandwich;
+using ScriptableObjects;
 using UnityEngine;
 
 namespace Intractable
@@ -9,16 +10,21 @@ namespace Intractable
     {
         private IngredientMover _ingredientMover;
         private MenuDrawer _menuDrawer;
+        private IngredientSlice _ingredientSlice;
         
         private Vector3 _originalPosition;
         private Quaternion _originalRotation;
         private bool _isActive;
 
         [SerializeField] private float lerpSpeed;
+
+        public IngredientSo SliceIngredientSo => _ingredientSlice.IngredientSo; 
+        
         private void Awake()
         {
             _ingredientMover = FindObjectOfType<IngredientMover>();
             _menuDrawer = GetComponentInParent<MenuDrawer>();
+            _ingredientSlice = GetComponent<IngredientSlice>();
             _menuDrawer.OnInitialized += LogStartTransform;
         }
 
@@ -54,8 +60,14 @@ namespace Intractable
         {
             base.OnUp();
             _ingredientMover.SliceSelectionResponse = null;
-            //TODO: lerp back to original position and rotation.
             _isActive = false;
+        }
+
+        public void SnapBackToOrigin()
+        {
+            OnUp();
+            transform.localPosition = _originalPosition;
+            transform.localRotation = _originalRotation;
         }
 
         private void OnDisable()

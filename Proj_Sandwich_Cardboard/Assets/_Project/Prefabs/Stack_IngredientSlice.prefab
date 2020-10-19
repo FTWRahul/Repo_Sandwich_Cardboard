@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-2057385040754151940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6117979800455440188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97c272e7a09740a9966bf63a51edcb42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBeforeConfirm: 2
 --- !u!1001 &1607799141516000450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67,6 +80,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stack_IngredientSlice
       objectReference: {fileID: 0}
+    - target: {fileID: 7569188608338457311, guid: fea4a58133f4b024fa33a176d6b11e27,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[3].callback.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7569188608338457311, guid: fea4a58133f4b024fa33a176d6b11e27,
+        type: 3}
+      propertyPath: m_Delegates.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7569188608338457311, guid: fea4a58133f4b024fa33a176d6b11e27,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: -2057385040754151940}
+    - target: {fileID: 7569188608338457311, guid: fea4a58133f4b024fa33a176d6b11e27,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnDown
+      objectReference: {fileID: 0}
+    - target: {fileID: 7569188608338457311, guid: fea4a58133f4b024fa33a176d6b11e27,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: -2057385040754151940}
+    - target: {fileID: 7569188608338457311, guid: fea4a58133f4b024fa33a176d6b11e27,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnUp
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1830485056157925450, guid: fea4a58133f4b024fa33a176d6b11e27, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fea4a58133f4b024fa33a176d6b11e27, type: 3}
+--- !u!1 &6117979800455440188 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4807419953946057726, guid: fea4a58133f4b024fa33a176d6b11e27,
+    type: 3}
+  m_PrefabInstance: {fileID: 1607799141516000450}
+  m_PrefabAsset: {fileID: 0}

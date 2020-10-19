@@ -144,3 +144,5 @@ MonoBehaviour:
   sliceHeightOffset: 0.2
   stackDistanceThreshold: 2.5
   startingBread: {fileID: 11400000, guid: 7b8f0315674fd9343908d313766433a4, type: 2}
+  particlePrefab: {fileID: 4899102301908442238, guid: a8e60c36bde6ef84aa580147f7921626,
+    type: 3}

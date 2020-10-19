@@ -4,16 +4,19 @@ using UnityEngine;
 
 namespace Sandwich
 {
-    //Ingame representation of an Ingredient, takes a SO and populates the prefab with its data.
+    //In-game representation of an Ingredient, takes a SO and populates the prefab with its data.
     //Dynamically create ingredients based on passed Data.
     public class IngredientSlice : MonoBehaviour
     {
-        //[SerializeField] private IngredientSo testSo; 
-        [SerializeField] private GameObject displayGameObject; 
+        //private memebers
         private MeshFilter _meshFilter;
         private MeshRenderer _meshRenderer;
         private IngredientSo _ingredientSo;
         
+        //exposed fields
+        [SerializeField] private GameObject displayGameObject; 
+        
+        //public properties
         public IngredientSo IngredientSo => _ingredientSo;
         
         private Material Material
@@ -32,6 +35,7 @@ namespace Sandwich
             _meshFilter = displayGameObject.GetComponent<MeshFilter>();
         }
 
+        //Initial setup
         public void Initialize(IngredientSo data)
         {
             _ingredientSo = data;
@@ -40,22 +44,17 @@ namespace Sandwich
             Material = data.IngredientMaterial;
         }
 
+        //Change the mesh being displayed based on passed index
         public void UpdateMesh(int index)
         {
-            if (index >= _ingredientSo.IngredientMesh.Length)
+            if (index >= _ingredientSo.IngredientMesh.Length) // error handling
             {
                 Mesh = null;
                 return;
             }
-            index = Mathf.Clamp(index, 0, _ingredientSo.IngredientMesh.Length - 1);
+            //index = Mathf.Clamp(index, 0, _ingredientSo.IngredientMesh.Length - 1);
             Mesh = _ingredientSo.IngredientMesh[index];
         }
         
-
-        // [ContextMenu( "Test Initialization")]
-        // public void InitTest()
-        // {
-        //     Initialize(testSo);
-        // }
     }
 }

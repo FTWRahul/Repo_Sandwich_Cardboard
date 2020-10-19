@@ -1,15 +1,18 @@
 ﻿using Sandwich;
 using UnityEngine;
 using DG.Tweening;
+using Interfaces;
+
 namespace Intractable
 {
-    public class IngredientStackSelectionResponse : BaseSelectionResponse
+    public class IngredientStackSelectionResponse : MonoBehaviour , IClickResponse
     {
         [SerializeField] private float timeBeforeConfirm;
         [SerializeField] private float shakeStrength;
         [SerializeField] private GameObject particlePrefab;
 
         private SandwichController _sandwichController;
+        private IngredientSlice _ingredientSlice;
         private bool _isActive;
         private float _activeTime;
         private Sequence _shakeSequence;
@@ -17,16 +20,16 @@ namespace Intractable
         private void Awake()
         {
             _sandwichController = FindObjectOfType<SandwichController>();
+            _ingredientSlice = GetComponent<IngredientSlice>();
         }
 
-        public override void OnDown()
+        public void OnDown()
         {
             if (_sandwichController.HasWon)
             {
                 _sandwichController.TakeBite();
                 return;
             }
-            base.OnDown();
             _isActive = true;
             _shakeSequence.Prepend(transform.DOShakePosition(timeBeforeConfirm, shakeStrength).SetEase(Ease.InOutCubic));
         }
@@ -42,7 +45,7 @@ namespace Intractable
             else
             {
                 _activeTime = 0;
-                if (_sandwichController.TryRemoveSlice(this))
+                if (_sandwichController.TryRemoveSlice(_ingredientSlice))
                 {
                     _sandwichController.PopStack();
                     _shakeSequence.Kill();
@@ -52,9 +55,8 @@ namespace Intractable
             }
         }
 
-        public override void OnUp()
+        public void OnUp()
         {
-            base.OnUp();
             _isActive = false;
             _activeTime = 0;
             _shakeSequence.Kill();

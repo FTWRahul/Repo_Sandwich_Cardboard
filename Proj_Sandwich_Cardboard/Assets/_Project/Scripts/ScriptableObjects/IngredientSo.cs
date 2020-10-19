@@ -8,7 +8,7 @@ namespace ScriptableObjects
     {
         //exposed fields
         [SerializeField] private string ingredientName;
-        [SerializeField] private Mesh[] ingredientMesh; // Stores 3 different meshes for
+        [SerializeField] private Mesh[] ingredientMesh; // Stores 3 different meshes for depicting different bite states
         [SerializeField] private Material ingredientMaterial;
 
         //public properties

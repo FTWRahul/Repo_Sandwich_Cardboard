@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using DG.Tweening;
+using Interfaces;
 
 namespace General
 {
-    public class ScaleObject : MonoBehaviour
+    public class ScaleObject : MonoBehaviour , ISelectionResponse
     {
         [SerializeField] private float scaleFactor;
         [SerializeField] private Ease tweenEase;
@@ -16,14 +17,14 @@ namespace General
             _originalScale = transform.localScale;
         }
 
-        public void ScaleUp()
+        public void OnEnter()
         {
             if(_isScaledUp) return;
             transform.DOScale(_originalScale * scaleFactor, .5f).SetEase(tweenEase);
             _isScaledUp = true;
         }
 
-        public void ScaleDown()
+        public void OnExit()
         {
             if(!_isScaledUp) return;
             transform.DOScale(_originalScale, .5f).SetEase(tweenEase);

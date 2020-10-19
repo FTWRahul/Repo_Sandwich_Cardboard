@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using ExtensionMethods;
+using Interfaces;
 using UnityEngine;
 
 namespace Intractable
 {
     //An Intractable that holds all the Ingredients for sandwich assembly
-    public class MenuSelectionResponse : BaseSelectionResponse
+    public class MenuSelectionResponse : MonoBehaviour , IClickResponse
     {
         [SerializeField] private Vector3 drawerOffset;
         [SerializeField] private float animationDuration;
@@ -14,7 +15,7 @@ namespace Intractable
         private bool _isActive;
         private bool _isAnimating;
         
-        public override void OnDown()
+        public void OnDown()
         {
              if(_isAnimating) return;
              
@@ -29,7 +30,11 @@ namespace Intractable
             {
                 StartCoroutine(AnimateDrawer(transform.position, transform.position -= drawerOffset));
             }
-            base.OnDown();
+        }
+
+        public void OnUp()
+        {
+            //Debug.Log("Do Nothing");
         }
 
         private IEnumerator AnimateDrawer(Vector3 fromPosition, Vector3 toPosition)

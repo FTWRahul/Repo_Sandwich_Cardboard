@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Audio;
 using Intractable;
 using Logger;
 using ScriptableObjects;
@@ -14,11 +15,17 @@ namespace Sandwich
         [SerializeField] private float sliceHeightOffset;
         [SerializeField] private float stackDistanceThreshold;
         [SerializeField] private IngredientSo startingBread;
-        
+
+        private AudioManager _audioManager;
         private Stack<IngredientStackSelectionResponse> _stackedIngredients = new Stack<IngredientStackSelectionResponse>();
         private int _meshIndex = 1;
 
         public bool HasWon => CheckWin();
+
+        private void Awake()
+        {
+            _audioManager = FindObjectOfType<AudioManager>();
+        }
 
         private void Start()
         {
@@ -37,6 +44,7 @@ namespace Sandwich
             if (_stackedIngredients.Count >= 0 && _stackedIngredients.Count < maxStackSize)
             {
                 SpawnStackSlice(data);
+                _audioManager.PlayPopSound();
                 return true;
             }
             LogManager.Instance.Log("That's too big of a sandwich \n Remove a slice and seal the deal with another bread slice!");
@@ -47,7 +55,7 @@ namespace Sandwich
         {
             var stackPosition = new Vector3(transform.position.x,
                 transform.position.y + _stackedIngredients.Count * sliceHeightOffset, transform.position.z);
-            IngredientSlice spawnedSlice = Instantiate(stackSlicePrefab, stackPosition, Quaternion.Euler(0, 180, 0))
+            IngredientSlice spawnedSlice = Instantiate(stackSlicePrefab, stackPosition, Quaternion.Euler(0, 270, 0))
                 .GetComponent<IngredientSlice>();
             spawnedSlice.Initialize(data);
             _stackedIngredients.Push(spawnedSlice.GetComponent<IngredientStackSelectionResponse>());
@@ -71,6 +79,7 @@ namespace Sandwich
         
         public void TakeBite()
         {
+            _audioManager.PlayBiteSound();
             if (_meshIndex >= 3)
             {
                 foreach (var slice in _stackedIngredients)
@@ -88,7 +97,6 @@ namespace Sandwich
                 slice.GetComponent<IngredientSlice>().UpdateMesh(_meshIndex);
             }
             LogManager.Instance.Log("Nom!");
-
             _meshIndex++;
         }
 

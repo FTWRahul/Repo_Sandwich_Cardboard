@@ -8,6 +8,7 @@ using TMPro;
 
 namespace Logger
 {
+    //In-game log manager to help guide the player though on-screen prompts.
     public class LogManager : MonoBehaviour
     {
         [SerializeField] private Color highlightColor;
@@ -20,6 +21,7 @@ namespace Logger
             Log("Open some Drawers \n and make some sandwiches!");
         }
 
+        //Display message
         public void Log(string message)
         {
             displayText.text = message;
@@ -28,6 +30,7 @@ namespace Logger
             StartCoroutine(FadeText());
         }
 
+        //Fade out message based on parameters
         public IEnumerator FadeText()
         {
             float t = 0;

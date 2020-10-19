@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Intractable
 {
-    //An Intractable that holds all the Ingredients for sandwich assembly
+    //An Intractable that holds all the Ingredients for sandwich assembly.
     public class MenuSelectionResponse : MonoBehaviour , IClickResponse
     {
         [SerializeField] private Vector3 drawerOffset;
@@ -15,6 +15,7 @@ namespace Intractable
         private bool _isActive;
         private bool _isAnimating;
         
+        //Toggle state and respond based on it.
         public void OnDown()
         {
              if(_isAnimating) return;
@@ -23,7 +24,6 @@ namespace Intractable
 
             if (_isActive)
             {
-                //transform.position += drawerOffset;
                 StartCoroutine(AnimateDrawer(transform.position, transform.position += drawerOffset));
             }
             else
@@ -37,6 +37,7 @@ namespace Intractable
             //Debug.Log("Do Nothing");
         }
 
+        //Smoothly move tray to and from based on animation curve
         private IEnumerator AnimateDrawer(Vector3 fromPosition, Vector3 toPosition)
         {
             _isAnimating = true;

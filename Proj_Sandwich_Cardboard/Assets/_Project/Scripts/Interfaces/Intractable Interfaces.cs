@@ -7,6 +7,7 @@
         void OnExit();
     }
 
+    //Interface segregation 
     public interface IClickResponse
     {
         void OnDown();

@@ -1,8 +1,8 @@
-﻿using UnityEngine;
-using DG.Tweening;
+﻿using DG.Tweening;
 using Interfaces;
+using UnityEngine;
 
-namespace General
+namespace Intractable
 {
     public class ScaleObject : MonoBehaviour , ISelectionResponse
     {

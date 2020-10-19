@@ -2,6 +2,7 @@
 
 namespace SceneHandling
 {
+    //Non static class for event based callbacks
     public class MainMenuHelper : MonoBehaviour
     {
         public void LoadGame()

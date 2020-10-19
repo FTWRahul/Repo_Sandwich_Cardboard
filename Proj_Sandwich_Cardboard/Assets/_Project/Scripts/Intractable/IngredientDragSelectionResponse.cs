@@ -5,6 +5,8 @@ using UnityEngine;
 
 namespace Intractable
 {
+    //Logic for maintaining ingredients that are in menus
+
     public class IngredientDragSelectionResponse : MonoBehaviour, IClickResponse
     {
         //private members

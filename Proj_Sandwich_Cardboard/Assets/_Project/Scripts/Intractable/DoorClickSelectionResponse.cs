@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace Intractable
 {
+    //Diegetic Interactable to exit back to menu
     public class DoorClickSelectionResponse : MonoBehaviour , IClickResponse
     {
         private bool _isActive;

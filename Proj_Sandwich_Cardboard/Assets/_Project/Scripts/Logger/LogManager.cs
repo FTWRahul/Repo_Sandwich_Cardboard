@@ -33,7 +33,11 @@ namespace Logger
             {
                 Destroy(gameObject);
             }
-            DontDestroyOnLoad(gameObject);
+        }
+
+        private void Start()
+        {
+            Log("Open some Drawers \n and make some sandwiches!");
         }
 
         public void Log(string message)

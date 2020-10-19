@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 1640765782413683498}
   - component: {fileID: 1830485056157925450}
   - component: {fileID: 7569188608338457311}
+  - component: {fileID: 7098810641148443306}
   m_Layer: 8
   m_Name: Menu_IngredientSlice
   m_TagString: Interactable
@@ -138,8 +139,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.3, z: 0.9}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.9, y: 0.1, z: 0.9}
+  m_Center: {x: 0, y: -0.09, z: 0}
 --- !u!114 &1830485056157925450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,16 +197,12 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls: []
-  - eventID: 5
+  - eventID: 0
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1830485056157925450}
-          m_MethodName: OnHold
+        - m_Target: {fileID: 7098810641148443306}
+          m_MethodName: ScaleUp
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -215,3 +212,32 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7098810641148443306}
+          m_MethodName: ScaleDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &7098810641148443306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4807419953946057726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f08f371185b9deb4fac38d5364688d7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleFactor: 1.3
+  tweenEase: 12

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Audio;
 using Intractable;
 using Logger;
@@ -15,6 +14,7 @@ namespace Sandwich
         [SerializeField] private float sliceHeightOffset;
         [SerializeField] private float stackDistanceThreshold;
         [SerializeField] private IngredientSo startingBread;
+        [SerializeField] private GameObject particlePrefab;
 
         private AudioManager _audioManager;
         private Stack<IngredientStackSelectionResponse> _stackedIngredients = new Stack<IngredientStackSelectionResponse>();
@@ -53,11 +53,14 @@ namespace Sandwich
 
         private void SpawnStackSlice(IngredientSo data)
         {
-            var stackPosition = new Vector3(transform.position.x,
-                transform.position.y + _stackedIngredients.Count * sliceHeightOffset, transform.position.z);
+            var stackPosition = new Vector3(
+                   transform.position.x, 
+                transform.position.y + _stackedIngredients.Count * sliceHeightOffset,
+                   transform.position.z);
             IngredientSlice spawnedSlice = Instantiate(stackSlicePrefab, stackPosition, Quaternion.Euler(0, 270, 0))
                 .GetComponent<IngredientSlice>();
             spawnedSlice.Initialize(data);
+            Instantiate(particlePrefab, spawnedSlice.transform.position, Quaternion.identity);
             _stackedIngredients.Push(spawnedSlice.GetComponent<IngredientStackSelectionResponse>());
         }
 
@@ -73,7 +76,7 @@ namespace Sandwich
 
         public bool CheckWin()
         {
-            return _stackedIngredients.Count > 2 &&
+            return _stackedIngredients.Count >= 2 &&
                    _stackedIngredients.Peek().GetComponent<IngredientSlice>().IngredientSo == startingBread;
         }
         

@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97c272e7a09740a9966bf63a51edcb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeConfirm: 2
+  timeBeforeConfirm: 1
+  shakeStrength: 0.05
+  particlePrefab: {fileID: 4899102301908442238, guid: a8e60c36bde6ef84aa580147f7921626,
+    type: 3}
 --- !u!1001 &1607799141516000450
 PrefabInstance:
   m_ObjectHideFlags: 0

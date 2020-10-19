@@ -11,7 +11,6 @@ namespace Intractable
         private bool _isActive;
         private float _activeTime;
 
-
         private void Awake()
         {
             _sandwichController = FindObjectOfType<SandwichController>();
@@ -19,6 +18,11 @@ namespace Intractable
 
         public override void OnDown()
         {
+            if (_sandwichController.HasWon)
+            {
+                _sandwichController.TakeBite();
+                return;
+            }
             base.OnDown();
             _isActive = true;
         }

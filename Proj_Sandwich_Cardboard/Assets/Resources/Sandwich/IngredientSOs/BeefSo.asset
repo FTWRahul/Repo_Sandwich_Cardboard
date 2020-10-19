@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: BeefSo
   m_EditorClassIdentifier: 
   ingredientName: Beef
-  ingredientMesh: {fileID: -3298502354656076532, guid: 0706552fbb15ccf40b82728a728bb629,
-    type: 3}
+  ingredientMesh:
+  - {fileID: -3298502354656076532, guid: 0706552fbb15ccf40b82728a728bb629, type: 3}
+  - {fileID: -8340039906628419067, guid: a85e8931370ee944d9dd0a842748f17a, type: 3}
+  - {fileID: -764294789597558826, guid: 81ff12118d0d7e44c8f87fdb614a14ac, type: 3}
   ingredientMaterial: {fileID: 2100000, guid: 45b1a6018d5d3d5428eaf5627b5ed4ca, type: 2}

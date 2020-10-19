@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: PicklesSo
   m_EditorClassIdentifier: 
   ingredientName: Pickles
-  ingredientMesh: {fileID: 3639623044987335385, guid: b28a7c17d7b520f4aa660199461c27bc,
-    type: 3}
+  ingredientMesh:
+  - {fileID: 3639623044987335385, guid: b28a7c17d7b520f4aa660199461c27bc, type: 3}
+  - {fileID: -3048375713533867879, guid: 0342438e045e51345babc2603201b5e7, type: 3}
+  - {fileID: -3031135788001988055, guid: 00b90f19739926541837c97741648e79, type: 3}
   ingredientMaterial: {fileID: 2100000, guid: 502c194766e088e46b5bb08c9a554752, type: 2}

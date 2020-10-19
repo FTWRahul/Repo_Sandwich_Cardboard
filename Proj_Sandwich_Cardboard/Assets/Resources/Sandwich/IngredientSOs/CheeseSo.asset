@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: CheeseSo
   m_EditorClassIdentifier: 
   ingredientName: Cheese
-  ingredientMesh: {fileID: -8935361684875123353, guid: cfa27ae7cdfb89b49997b20d100b06c4,
-    type: 3}
+  ingredientMesh:
+  - {fileID: -8935361684875123353, guid: cfa27ae7cdfb89b49997b20d100b06c4, type: 3}
+  - {fileID: -4261550545512929365, guid: facf24a788243ef47a0569d06c6f40dd, type: 3}
+  - {fileID: 3861215726601778510, guid: 39f908e4b272b8c47a8966c9039cbf60, type: 3}
   ingredientMaterial: {fileID: 2100000, guid: 45412872833e31942a13eaf9841c1582, type: 2}

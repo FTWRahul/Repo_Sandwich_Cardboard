@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: PineappleSo
   m_EditorClassIdentifier: 
   ingredientName: Pineapple
-  ingredientMesh: {fileID: 6279727641727024109, guid: 7bef048ed0877534a9f6d723514a9d8e,
-    type: 3}
+  ingredientMesh:
+  - {fileID: 6279727641727024109, guid: 7bef048ed0877534a9f6d723514a9d8e, type: 3}
+  - {fileID: -6115477844307082886, guid: 156e9f0953962fc46a212a92dfe2eb37, type: 3}
+  - {fileID: -5146288480633306659, guid: e21e7b99f368e244ba8df4eb4b6d58b5, type: 3}
   ingredientMaterial: {fileID: 2100000, guid: 70c0bbe5ccba26d4aa24355aab41ebb9, type: 2}

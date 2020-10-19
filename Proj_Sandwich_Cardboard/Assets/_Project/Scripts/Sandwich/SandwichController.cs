@@ -15,15 +15,22 @@ namespace Sandwich
         [SerializeField] private IngredientSo startingBread;
         
         private Stack<IngredientStackSelectionResponse> _stackedIngredients = new Stack<IngredientStackSelectionResponse>();
+        private int _meshIndex = 1;
 
-        private void Awake()
+        public bool HasWon => CheckWin();
+
+        private void Start()
         {
             SpawnStackSlice(startingBread);
         }
 
         public bool TryPlaceSlice(IngredientSo data, Vector3 position)
         {
-            Debug.Log("Distance " + Vector3.Distance(transform.position, position));
+            if (HasWon)
+            {
+                //TODO: Log to eat the sandwich!
+                return true;
+            }
             if (Vector3.Distance(transform.position, position) > stackDistanceThreshold) return false;
             
             if (_stackedIngredients.Count >= 0 && _stackedIngredients.Count < maxStackSize)
@@ -39,7 +46,7 @@ namespace Sandwich
         {
             var stackPosition = new Vector3(transform.position.x,
                 transform.position.y + _stackedIngredients.Count * sliceHeightOffset, transform.position.z);
-            IngredientSlice spawnedSlice = Instantiate(stackSlicePrefab, stackPosition, Quaternion.identity)
+            IngredientSlice spawnedSlice = Instantiate(stackSlicePrefab, stackPosition, Quaternion.Euler(0, 180, 0))
                 .GetComponent<IngredientSlice>();
             spawnedSlice.Initialize(data);
             _stackedIngredients.Push(spawnedSlice.GetComponent<IngredientStackSelectionResponse>());
@@ -53,6 +60,31 @@ namespace Sandwich
         public void PopStack()
         {
             _stackedIngredients.Pop();
+        }
+
+        public bool CheckWin()
+        {
+            return _stackedIngredients.Count > 2 &&
+                   _stackedIngredients.Peek().GetComponent<IngredientSlice>().IngredientSo == startingBread;
+        }
+        
+        public void TakeBite()
+        {
+            if (_meshIndex >= 3)
+            {
+                foreach (var slice in _stackedIngredients)
+                {
+                    Destroy(slice.gameObject);
+                }
+                _meshIndex = 0;
+                _stackedIngredients.Clear();
+                SpawnStackSlice(startingBread);
+            }
+            foreach (var slice in _stackedIngredients)
+            {
+                slice.GetComponent<IngredientSlice>().UpdateMesh(_meshIndex);
+            }
+            _meshIndex++;
         }
 
         private void OnDrawGizmosSelected()

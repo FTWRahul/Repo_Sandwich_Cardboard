@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: PepperSo
   m_EditorClassIdentifier: 
   ingredientName: Pepper
-  ingredientMesh: {fileID: 5679018063472259382, guid: 50e4dd24b8bf00d40ae7326b786e3e08,
-    type: 3}
+  ingredientMesh:
+  - {fileID: 5679018063472259382, guid: 50e4dd24b8bf00d40ae7326b786e3e08, type: 3}
+  - {fileID: 8087109947458655081, guid: fbc0b7c267169574a925739840377edb, type: 3}
+  - {fileID: 8376090690828133087, guid: 37cca5625fd90c1488ff54f79e26654a, type: 3}
   ingredientMaterial: {fileID: 2100000, guid: a75a8f6ab54b06c4091ec9d089e370a2, type: 2}

@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: OrangeSo
   m_EditorClassIdentifier: 
   ingredientName: Orange
-  ingredientMesh: {fileID: -5332979093079327471, guid: 54385cf2f6c508b44810037a298c86c6,
-    type: 3}
+  ingredientMesh:
+  - {fileID: -5332979093079327471, guid: 54385cf2f6c508b44810037a298c86c6, type: 3}
+  - {fileID: -5148472277592733775, guid: 12f5fe53b68e88048bd7f24e5870321c, type: 3}
+  - {fileID: 6145781659539565822, guid: 18051c2cf737b474ca261cf33a3d5174, type: 3}
   ingredientMaterial: {fileID: 2100000, guid: 4035de5897ec2b14089035fef77f2309, type: 2}

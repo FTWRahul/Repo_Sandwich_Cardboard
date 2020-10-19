@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: MushroomSo
   m_EditorClassIdentifier: 
   ingredientName: Mushroom
-  ingredientMesh: {fileID: -8520962375771300673, guid: 5842073b3e16a814686294c18d9c6a41,
-    type: 3}
+  ingredientMesh:
+  - {fileID: -8520962375771300673, guid: 5842073b3e16a814686294c18d9c6a41, type: 3}
+  - {fileID: -738055938848005103, guid: 57b78d1e2212b5c478f8cd6ea43da4f3, type: 3}
+  - {fileID: -6441570672486206492, guid: 303c6c3c5c8610d4185bc9847d95ca2c, type: 3}
   ingredientMaterial: {fileID: 2100000, guid: b9116570009a6ae40b7c158acdc513ef, type: 2}

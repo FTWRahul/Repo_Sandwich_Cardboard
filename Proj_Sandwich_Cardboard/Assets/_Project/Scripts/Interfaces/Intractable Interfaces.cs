@@ -1,6 +1,4 @@
-﻿using UnityEngine.Events;
-
-namespace Interfaces
+﻿namespace Interfaces
 {
     //Allows scripts to have common functionality while interacting, also limits interactions to the ones specified.
     public interface ISelectionResponse
@@ -13,10 +11,5 @@ namespace Interfaces
     {
         void OnDown();
         void OnUp();
-    }
-
-    public interface IHoldResponse
-    {
-        void OnHold();
     }
 }

@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: SalmonSo
   m_EditorClassIdentifier: 
   ingredientName: Salmon
-  ingredientMesh: {fileID: -9215711580081451012, guid: c9b2e156152b3a848b3b441f6bd2eff7,
-    type: 3}
+  ingredientMesh:
+  - {fileID: -9215711580081451012, guid: c9b2e156152b3a848b3b441f6bd2eff7, type: 3}
+  - {fileID: 3346596879016107640, guid: 2663f07ccf682534ab228fc85858ead2, type: 3}
+  - {fileID: -8425037659532768764, guid: 94586321f59f63f4aa0838227d5e3af0, type: 3}
   ingredientMaterial: {fileID: 2100000, guid: 7c20c746dd51d874cbd9f57b66f330bc, type: 2}

@@ -25,7 +25,6 @@ namespace Sandwich
             _sandwichController = FindObjectOfType<SandwichController>();
         }
 
-        //TODO: lerp slice to position
         public void SmoothLerpTowardsTarget()
         {
             if(!_isActive) return;

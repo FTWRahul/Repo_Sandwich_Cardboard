@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: SaladSo
   m_EditorClassIdentifier: 
   ingredientName: Salad
-  ingredientMesh: {fileID: -4174231304380385436, guid: c318ef45855e1ec4599f245cd567175f,
-    type: 3}
+  ingredientMesh:
+  - {fileID: -4174231304380385436, guid: c318ef45855e1ec4599f245cd567175f, type: 3}
+  - {fileID: -829796219239987195, guid: ca97a4df9fe57dc438946f271858686f, type: 3}
+  - {fileID: 1325596393472169743, guid: 9bb02cf3333484f4792cb5c7b9e4bff5, type: 3}
   ingredientMaterial: {fileID: 2100000, guid: 852ba461798c1784ca616c5a525cb927, type: 2}

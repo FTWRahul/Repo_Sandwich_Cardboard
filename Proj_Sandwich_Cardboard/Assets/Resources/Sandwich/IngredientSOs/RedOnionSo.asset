@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: RedOnionSo
   m_EditorClassIdentifier: 
   ingredientName: RedOnion
-  ingredientMesh: {fileID: 3416752897577887929, guid: bdbf5a8c7efe12b4fa1310c489da3710,
-    type: 3}
+  ingredientMesh:
+  - {fileID: 3416752897577887929, guid: bdbf5a8c7efe12b4fa1310c489da3710, type: 3}
+  - {fileID: -8207838821151692735, guid: 7d81a1da3a0375a4e8c82042b6f59bde, type: 3}
+  - {fileID: 8877298805395032044, guid: 59ad450a3cf671e4fbfabeb60c8df63e, type: 3}
   ingredientMaterial: {fileID: 2100000, guid: 57931b295381088439ffd15d7c92eb7a, type: 2}

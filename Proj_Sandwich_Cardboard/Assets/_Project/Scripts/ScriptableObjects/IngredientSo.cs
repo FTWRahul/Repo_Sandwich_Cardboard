@@ -6,12 +6,12 @@ namespace ScriptableObjects
     public class IngredientSo : ScriptableObject
     {
         [SerializeField] private string ingredientName;
-        [SerializeField] private Mesh ingredientMesh;
+        [SerializeField] private Mesh[] ingredientMesh;
         [SerializeField] private Material ingredientMaterial;
 
         public string IngredientName => ingredientName;
 
-        public Mesh IngredientMesh => ingredientMesh;
+        public Mesh[] IngredientMesh => ingredientMesh;
 
         public Material IngredientMaterial => ingredientMaterial;
     }

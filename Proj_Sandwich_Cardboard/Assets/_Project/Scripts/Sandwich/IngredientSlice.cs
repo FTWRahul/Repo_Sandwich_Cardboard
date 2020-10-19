@@ -13,7 +13,7 @@ namespace Sandwich
         private MeshFilter _meshFilter;
         private MeshRenderer _meshRenderer;
         private IngredientSo _ingredientSo;
-
+        
         public IngredientSo IngredientSo => _ingredientSo;
         
         private Material Material
@@ -36,9 +36,21 @@ namespace Sandwich
         {
             _ingredientSo = data;
             gameObject.name = data.IngredientName;
-            Mesh = data.IngredientMesh;
+            UpdateMesh(0);
             Material = data.IngredientMaterial;
         }
+
+        public void UpdateMesh(int index)
+        {
+            if (index >= _ingredientSo.IngredientMesh.Length)
+            {
+                Mesh = null;
+                return;
+            }
+            index = Mathf.Clamp(index, 0, _ingredientSo.IngredientMesh.Length - 1);
+            Mesh = _ingredientSo.IngredientMesh[index];
+        }
+        
 
         // [ContextMenu( "Test Initialization")]
         // public void InitTest()

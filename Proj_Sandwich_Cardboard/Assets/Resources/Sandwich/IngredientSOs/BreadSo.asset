@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: BreadSo
   m_EditorClassIdentifier: 
   ingredientName: Bread
-  ingredientMesh: {fileID: -2839556421560675119, guid: 8e8df004646ce294caf69046dcfe5002,
-    type: 3}
+  ingredientMesh:
+  - {fileID: -2839556421560675119, guid: 8e8df004646ce294caf69046dcfe5002, type: 3}
+  - {fileID: -6928745875617938406, guid: 2ddd1cdd7c0d5974596a7b2d6e7ea082, type: 3}
+  - {fileID: -8657405603192018103, guid: 2f13c26da34c38e46aae26af04240467, type: 3}
   ingredientMaterial: {fileID: 2100000, guid: bf7c350916236744fb5e9ee9e3940727, type: 2}

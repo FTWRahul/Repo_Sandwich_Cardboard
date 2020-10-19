@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: TomatoSo
   m_EditorClassIdentifier: 
   ingredientName: Tomato
-  ingredientMesh: {fileID: 2337535511279580658, guid: c11d344d03e810449b4f3f8c4b4a7add,
-    type: 3}
+  ingredientMesh:
+  - {fileID: 2337535511279580658, guid: c11d344d03e810449b4f3f8c4b4a7add, type: 3}
+  - {fileID: 420186784108821172, guid: 5dc9e0a8e6486b14c9f252a74d6f10ef, type: 3}
+  - {fileID: -248126553359752520, guid: ba73560a33fbd0f4c80d05a10ba01413, type: 3}
   ingredientMaterial: {fileID: 2100000, guid: 77cf465006b1de4409c38a031564db88, type: 2}
